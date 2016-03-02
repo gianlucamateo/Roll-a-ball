@@ -26,7 +26,7 @@ public class HeadController : MonoBehaviour {
 		x += 1f;
 		if (variableOffset.magnitude > 1)
 			variableOffset.Normalize ();
-		Vector3 totaloffset = baseOffset + variableOffset/3f;
+		Vector3 totaloffset = baseOffset + variableOffset;
 		totaloffset.Normalize ();
 		angle = Vector3.Angle (Vector3.up, totaloffset);
 		Vector3 rotAxis = Vector3.Cross (Vector3.up, totaloffset);
