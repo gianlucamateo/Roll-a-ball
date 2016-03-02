@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float thrust;
 	public GameObject head;
-	private Rigidbody rb;
+	public Rigidbody rb;
 
 	void Start ()
 	{
