@@ -35,7 +35,7 @@ public class HeadController : MonoBehaviour {
 			sign = -1;
 		else
 			sign = 1;
-		totaloffset *= 0.6f;
+		totaloffset *= 0.45f;
 		transform.position = body.transform.position + totaloffset;
 		transform.rotation = Quaternion.AngleAxis (angle, rotAxis) * Quaternion.Euler (0, headingAngle * headingSign, 0);//Quaternion.Euler (0, 90, 0) * Quaternion.Euler(angle*sign,0,0);
 

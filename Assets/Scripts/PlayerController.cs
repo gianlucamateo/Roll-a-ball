@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject head;
 	public Rigidbody rb;
 
+
+
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody> ();
@@ -16,7 +18,6 @@ public class PlayerController : MonoBehaviour {
     {
 		if (Input.GetKey (KeyCode.Space)) {
 			UnityEngine.VR.InputTracking.Recenter ();
-
 		}
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour {
 		if (movement.magnitude == 0)
 			vOffset *= 0.9f;
 		head.GetComponent<HeadController> ().variableOffset = vOffset;
+
+		
     }
 
 
