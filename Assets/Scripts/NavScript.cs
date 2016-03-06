@@ -3,10 +3,10 @@ using System.Collections;
 
 public class NavScript : MonoBehaviour {
 
-
+	public GameObject target;
 
 	void Start () {
 		NavMeshAgent agent = GetComponent<NavMeshAgent>();
-		agent.destination = new Vector3(5,0,0); 
+		agent.destination = target.transform.position; 
 	}
 }
