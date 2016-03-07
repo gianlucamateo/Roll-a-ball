@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour {
 	public float forward;
 	public float currentSpeed,targetSpeed;
 
+	public void Navigate(){
+		this.navPoints = nav.path.corners;
+		stopping = true;
+		navigating = true;
+		navIndex = 0;
+	}
 
 	void Start ()
 	{
@@ -30,10 +36,7 @@ public class PlayerController : MonoBehaviour {
 			UnityEngine.VR.InputTracking.Recenter ();
 		}
 		if (Input.GetKey (KeyCode.N)) {
-			this.navPoints = nav.path.corners;
-			stopping = true;
-			navigating = true;
-			navIndex = 0;
+			this.Navigate ();
 		}
 		if (Input.GetKey (KeyCode.P)) {
 			stopping = true;
@@ -86,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (movement.magnitude == 0) {
 			vOffset *= 0.9f;
-			if (vOffset.magnitude < 0.1f) {
+			if (vOffset.magnitude < 0.01f) {
 				vOffset = Vector3.zero;
 			}
 		} else {
