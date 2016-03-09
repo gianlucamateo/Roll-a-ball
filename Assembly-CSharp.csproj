@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraMoveScript.cs" />
      <Compile Include="Assets\Scripts\HeadController.cs" />
+     <Compile Include="Assets\Scripts\LightController.cs" />
      <Compile Include="Assets\Scripts\NavScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SpeechRecognition.cs" />

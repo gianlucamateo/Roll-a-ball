@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpeechRecognition.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LightController.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpeechRecognition.cs" Line="31" Column="35" />
+      <File FileName="Assets\Scripts\LightController.cs" Line="34" Column="1" />
+      <File FileName="Assets\Scripts\SpeechRecognition.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\NavScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HeadController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="92" Column="32" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraMoveScript.cs" Line="1" Column="1" />
     </Files>

@@ -21,7 +21,7 @@ namespace SpeechAPI.Models
         {
             sr = new SpeechRecognitionEngine();
             Choices colors = new Choices();
-            colors.Add(new string[] { "James" });
+            colors.Add(new string[] { "Peter", "James"});
 
             GrammarBuilder gb = new GrammarBuilder();
             gb.Append(colors);
