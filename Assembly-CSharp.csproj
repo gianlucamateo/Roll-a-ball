@@ -38,26 +38,125 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>E:/unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>E:/unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Runtime\DrawCallMinimizer.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\CommonShaderProperties.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\DrawCallMinimizerInfo.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MatrixExtension.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MeshCombineUtility.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MeshExporter.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MeshInstance.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\ShaderProperties.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\TextureCombineOutput.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\TextureCombineUtility.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\TexturePosition.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Misc\ShaderProperties.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Misc\TextureAtlasInfo.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Runtime\MeshCombineUtility.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Runtime\OptimizedCombineChildren.cs" />
+     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Runtime\TextureCombineUtility.cs" />
+     <Compile Include="Assets\LeapC\Arm.cs" />
+     <Compile Include="Assets\LeapC\Bone.cs" />
+     <Compile Include="Assets\LeapC\CSharpExtensions.cs" />
+     <Compile Include="Assets\LeapC\CircularObjectBuffer.cs" />
+     <Compile Include="Assets\LeapC\Config.cs" />
+     <Compile Include="Assets\LeapC\Connection.cs" />
+     <Compile Include="Assets\LeapC\Controller.cs" />
+     <Compile Include="Assets\LeapC\Device.cs" />
+     <Compile Include="Assets\LeapC\DeviceList.cs" />
+     <Compile Include="Assets\LeapC\DistortionData.cs" />
+     <Compile Include="Assets\LeapC\DistortionDictionary.cs" />
+     <Compile Include="Assets\LeapC\Events.cs" />
+     <Compile Include="Assets\LeapC\FailedDevice.cs" />
+     <Compile Include="Assets\LeapC\FailedDeviceList.cs" />
+     <Compile Include="Assets\LeapC\Finger.cs" />
+     <Compile Include="Assets\LeapC\Frame.cs" />
+     <Compile Include="Assets\LeapC\Hand.cs" />
+     <Compile Include="Assets\LeapC\IController.cs" />
+     <Compile Include="Assets\LeapC\Image.cs" />
+     <Compile Include="Assets\LeapC\ImageData.cs" />
+     <Compile Include="Assets\LeapC\ImageReference.cs" />
+     <Compile Include="Assets\LeapC\InteractionBox.cs" />
+     <Compile Include="Assets\LeapC\LeapC.cs" />
+     <Compile Include="Assets\LeapC\Logger.cs" />
+     <Compile Include="Assets\LeapC\Matrix.cs" />
+     <Compile Include="Assets\LeapC\MessageSeverity.cs" />
+     <Compile Include="Assets\LeapC\ObjectPool.cs" />
+     <Compile Include="Assets\LeapC\PooledObject.cs" />
+     <Compile Include="Assets\LeapC\ServiceFrameFactory.cs" />
+     <Compile Include="Assets\LeapC\TrackedQuad.cs" />
+     <Compile Include="Assets\LeapC\Vector.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\HandFactory.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\HandPool.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\HandProxy.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\HandRepresentation.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\CapsuleHand.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\DebugFinger.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\DebugHand.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\FingerModel.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\HandDrop.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\HandEnableDisable.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\HandFader.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\HandModel.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\HandTransitionBehavior.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\IHandModel.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\MinimalHand.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\RigidFinger.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\RigidHand.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\SkeletalFinger.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\SkeletalHand.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Hands\TestHandFactory.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\LeapDeviceInfo.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\LeapHandController.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\LeapImageRetriever.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\LeapProvider.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\DisconnectionNotice.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\EnableDepthBuffer.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\ExecutionOrder.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\FitHeightToScreen.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\FrameRateControls.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\KeyEnableBehaviors.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\KeyEnableGameObjects.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\LeapUnityExtensions.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\SmoothedFloat.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\SmoothedQuaternion.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\SmoothedVector3.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\StretchToScreen.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\Utils\Utils.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\VR\EyeType.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\VR\LeapVRCameraControl.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\VR\LeapVRTemporalWarping.cs" />
+     <Compile Include="Assets\LeapMotion\Scripts\VR\TemporalWarpingStatus.cs" />
      <Compile Include="Assets\Scripts\Attach.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraMoveScript.cs" />
      <Compile Include="Assets\Scripts\HeadController.cs" />
      <Compile Include="Assets\Scripts\LightController.cs" />
+     <Compile Include="Assets\Scripts\MovieController.cs" />
      <Compile Include="Assets\Scripts\NavScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SpeechRecognition.cs" />
+     <None Include="Assets\Plugins\donotdelete.txt" />
+     <None Include="Assets\LeapMotion\Resources\LeapCG.cginc" />
+     <None Include="Assets\LeapMotion\README_BEFORE_UPDATING.txt" />
+     <None Include="Assets\LeapMotion\readme.txt" />
+     <None Include="Assets\LeapMotion\Dependencies.txt" />
+     <None Include="Assets\LeapMotion\Resources\ThresholdOverlay.shader" />
+     <None Include="Assets\LeapMotion\Resources\PassthroughForeground.shader" />
+     <None Include="Assets\Draw Call Minimizer\Example\ReadMe.txt" />
+     <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
+     <None Include="Assets\LeapMotion\Version.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>E:/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>E:/unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
