@@ -38,29 +38,13 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>E:/unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>E:/unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Runtime\DrawCallMinimizer.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\CommonShaderProperties.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\DrawCallMinimizerInfo.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MatrixExtension.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MeshCombineUtility.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MeshExporter.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\MeshInstance.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\ShaderProperties.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\TextureCombineOutput.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\TextureCombineUtility.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\NEW\Utility\TexturePosition.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Misc\ShaderProperties.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Misc\TextureAtlasInfo.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Runtime\MeshCombineUtility.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Runtime\OptimizedCombineChildren.cs" />
-     <Compile Include="Assets\Draw Call Minimizer\Scripts\OLD\Runtime\TextureCombineUtility.cs" />
      <Compile Include="Assets\LeapC\Arm.cs" />
      <Compile Include="Assets\LeapC\Bone.cs" />
      <Compile Include="Assets\LeapC\CSharpExtensions.cs" />
@@ -134,6 +118,7 @@
      <Compile Include="Assets\LeapMotion\Scripts\VR\LeapVRTemporalWarping.cs" />
      <Compile Include="Assets\LeapMotion\Scripts\VR\TemporalWarpingStatus.cs" />
      <Compile Include="Assets\Scripts\Attach.cs" />
+     <Compile Include="Assets\Scripts\BlindRiseController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraMoveScript.cs" />
      <Compile Include="Assets\Scripts\HeadController.cs" />
@@ -149,14 +134,13 @@
      <None Include="Assets\LeapMotion\Dependencies.txt" />
      <None Include="Assets\LeapMotion\Resources\ThresholdOverlay.shader" />
      <None Include="Assets\LeapMotion\Resources\PassthroughForeground.shader" />
-     <None Include="Assets\Draw Call Minimizer\Example\ReadMe.txt" />
      <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
      <None Include="Assets\LeapMotion\Version.txt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>E:/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>E:/unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

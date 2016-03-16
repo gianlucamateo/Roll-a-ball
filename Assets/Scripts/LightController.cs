@@ -4,6 +4,7 @@ using System.Collections;
 public class LightController : MonoBehaviour {
 
 	public GameObject[] bulbs;
+	public KeyCode code;
 	// Use this for initialization
 	void Start () {
 	
@@ -11,7 +12,7 @@ public class LightController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.L)) {
+		if (Input.GetKeyDown (code)) {
 			Light l = (Light)this.gameObject.GetComponent<Light>();
 			if (l.intensity == 1) {
 				l.intensity = 0;
