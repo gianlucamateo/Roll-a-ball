@@ -44,5 +44,6 @@ Temporary Items
 .userprefs
 Library/
 Temp/
-.mp4
+*.mp4
+Test_Data/
 

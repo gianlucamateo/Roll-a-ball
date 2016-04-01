@@ -16,8 +16,8 @@ public class SpeechRecognition : MonoBehaviour {
 		// check for errors
 		if (www.error == null)
 		{
-			Debug.Log("WWW Ok!: " + www.data);
-			if (www.data.Contains ("James")) {
+			Debug.Log("WWW Ok!: " + www.text);
+			if (www.text.Contains ("James")) {
 				james.Navigate ();
 			}
 		} else {

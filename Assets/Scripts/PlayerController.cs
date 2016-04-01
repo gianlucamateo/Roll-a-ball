@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour {
 		}
 		vOffset = head.GetComponent<HeadController> ().variableOffset;
 		vOffset += movement / 10;
+		vOffset = movement;
 		vOffset.x = Mathf.Round (100f * vOffset.x) / 100f;
 		vOffset.y = Mathf.Round (100f * vOffset.y) / 100f;
 		vOffset.z = Mathf.Round (100f * vOffset.z) / 100f;
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			rb.AddForce (vOffset * thrust);
 		}
-		head.GetComponent<HeadController> ().variableOffset = vOffset;
+		head.GetComponent<HeadController> ().variableOffset = rb.velocity/4f;
 		
     }
 
@@ -103,7 +104,7 @@ public class PlayerController : MonoBehaviour {
 	{		
 		Vector3 velocity = rb.velocity;
 		controlOverride = -velocity;
-		rb.velocity *= 0.9f;
+		//rb.velocity *= 0.9f;
 		if (fullstop) {
 			if (rb.velocity.magnitude < 0.1) {
 				stopCount++;

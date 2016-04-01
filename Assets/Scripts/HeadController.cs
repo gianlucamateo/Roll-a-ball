@@ -4,9 +4,12 @@ using System.Collections;
 public class HeadController : MonoBehaviour {
 
 	public float angle;
+	public Camera Camera;
 	public GameObject body;
 	public Vector3 baseOffset, variableOffset, direction;
-	public float x = 0;
+	public float x = 0, headingSign = 0;
+	public float headingAngle = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -15,15 +18,27 @@ public class HeadController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		PlayerController bodyController = body.GetComponent<PlayerController>();
+		direction = bodyController.rb.velocity;
 
-		direction = body.GetComponent<PlayerController> ().rb.velocity;
-		float headingAngle = Vector3.Angle (Vector3.forward, direction);
-		float headingSign = Vector3.Cross (Vector3.forward, direction).y;
+		float directionAngle = Vector3.Angle (Vector3.forward, direction);
+		Vector3 dirToCam = -(transform.position - Camera.transform.position).normalized;
+		dirToCam.y = 0;
+		float playerAngle = Vector3.Angle (Vector3.forward, dirToCam); 
+
+
+
+		x = (1 / (direction.magnitude + 1));
+
+		Vector3 meanDirection = direction.normalized * (1 - x) + dirToCam.normalized * x;
+
+		headingAngle = Vector3.Angle (Vector3.forward, meanDirection); 
+
+		headingSign = Vector3.Cross (Vector3.forward, meanDirection).y;
 		if (headingSign < 0)
 			headingSign = -1;
 		else
 			headingSign = 1;
-		x += 1f;
 		if (variableOffset.magnitude > 1)
 			variableOffset.Normalize ();
 		Vector3 totaloffset = baseOffset + variableOffset;
