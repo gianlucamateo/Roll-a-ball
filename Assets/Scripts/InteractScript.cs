@@ -10,6 +10,7 @@ public class InteractScript : MonoBehaviour {
 	public float fingerDist;
 	public GameObject[] interactables;
 	public int sleepCounter=0;
+	public int counter = 0;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,6 +19,9 @@ public class InteractScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (sleepCounter-- > 0) {
+			return;
+		}
+		if (counter++ % 20 != 0) {
 			return;
 		}
 		Vector3 fwd = transform.position - head.transform.position;
