@@ -30,7 +30,6 @@ public class InteractScript : MonoBehaviour {
 		RaycastHit hit;			
 		if (Physics.Raycast (transform.position, fwd,out hit)) {
 			hitObject = hit.transform.gameObject;
-			print (hitObject);
 			foreach (GameObject s in interactables) {
 				if (hitObject == s && fingerDist < 0.03f) {
 					SwitchScript sScript = s.GetComponent<SwitchScript> ();

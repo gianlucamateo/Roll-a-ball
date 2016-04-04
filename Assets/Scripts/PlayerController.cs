@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public float currentSpeed,targetSpeed;
 
 	public void Navigate(){
+		this.head.GetComponent<HeadController>().playBeep ();
 		this.navPoints = nav.path.corners;
 		stopping = true;
 		navigating = true;
@@ -52,17 +53,11 @@ public class PlayerController : MonoBehaviour {
 			distance = (navPoints [navIndex] - transform.position).magnitude;
 			targetSpeed = distance;
 			currentSpeed = rb.velocity.magnitude;
-			//if (targetSpeed > 2 * currentSpeed) {
-				controlOverride = navPoints [navIndex] - transform.position;
-			//}
-			/*
-			if (currentSpeed > 2 * targetSpeed) {
-				//forward = Vector3.Dot (vOffset, rb.velocity) > 0 ? Vector3.Dot (vOffset, rb.velocity) : 0;
-				controlOverride -= rb.velocity*(currentSpeed-targetSpeed);
-			}*/
+
+			controlOverride = navPoints [navIndex] - transform.position;
+
 			if (distance < 0.5) {
 				slowing = true;
-				//stopping = true;
 
 				if (navPoints.Length > navIndex + 1) {
 					navIndex++;

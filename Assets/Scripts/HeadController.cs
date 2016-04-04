@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Timers;
 
 public class HeadController : MonoBehaviour {
 
@@ -9,15 +10,39 @@ public class HeadController : MonoBehaviour {
 	public Vector3 baseOffset, variableOffset, direction;
 	public float x = 0, headingSign = 0;
 	public float headingAngle = 0;
+	private float[] beginnings = {0,1.5f,5.3f,7.3f,9.5f,29.2f,30.6f};
+	private float[] durations = {1.5f,1.5f,1.5f,2,2.2f,1.2f,1.4f};
+	private volatile bool stopSound = false;
 
 
 	// Use this for initialization
 	void Start () {
 		variableOffset = Vector3.zero;	
 	}
+
+	public void playBeep() {		
+		stopSound = false;
+		AudioSource source = this.GetComponent<AudioSource> ();
+		int index = Random.Range(0,7);
+		source.time = beginnings[index];
+		source.Play ();
+		Timer t = new Timer (1000 * durations[index]);
+		t.Elapsed += (object sender, ElapsedEventArgs e) => {
+			stopSound = true;
+			t.Dispose();
+		};
+		t.Start ();
+	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.A)) {
+			playBeep ();
+		}
+		if (stopSound) {			
+			AudioSource source = this.GetComponent<AudioSource> ();
+			source.Stop ();
+		}
 		PlayerController bodyController = body.GetComponent<PlayerController>();
 		direction = bodyController.rb.velocity;
 

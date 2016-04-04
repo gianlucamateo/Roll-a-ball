@@ -30,7 +30,7 @@ public class SpeechRecognition : MonoBehaviour {
 		if (count++ % 20 == 0) {
 			string url = "http://localhost:2960/api/speech";
 			WWW www = new WWW (url);
-			StartCoroutine (WaitForRequest (www));
+			//StartCoroutine (WaitForRequest (www));
 		}
 	}
 }
