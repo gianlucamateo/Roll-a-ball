@@ -118,6 +118,7 @@
      <Compile Include="Assets\LeapMotion\Scripts\VR\LeapVRTemporalWarping.cs" />
      <Compile Include="Assets\LeapMotion\Scripts\VR\TemporalWarpingStatus.cs" />
      <Compile Include="Assets\Scripts\Attach.cs" />
+     <Compile Include="Assets\Scripts\BlindController.cs" />
      <Compile Include="Assets\Scripts\BlindRiseController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraMoveScript.cs" />
@@ -137,6 +138,7 @@
      <None Include="Assets\LeapMotion\Dependencies.txt" />
      <None Include="Assets\LeapMotion\Resources\ThresholdOverlay.shader" />
      <None Include="Assets\LeapMotion\Resources\PassthroughForeground.shader" />
+     <None Include="Assets\sky5X\README.txt" />
      <None Include="Assets\LeapMotion\Resources\PassthroughBackground.shader" />
      <None Include="Assets\LeapMotion\Version.txt" />
  <Reference Include="UnityEngine.UI">

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovieController : MonoBehaviour {
+public class MovieController : SwitchScript {
 
 	public MovieTexture movie;
 	// Use this for initialization
@@ -13,15 +13,19 @@ public class MovieController : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.M)) {
 
-			Renderer r = GetComponent<Renderer>();
-			movie = (MovieTexture)r.material.mainTexture;
+			this.Switch ();
+		}
+	}
+	override public void Switch() {
+		
+		Renderer r = GetComponent<Renderer>();
+		movie = (MovieTexture)r.material.mainTexture;
 
-			if (movie.isPlaying) {
-				movie.Pause();
-			}
-			else {
-				movie.Play();
-			}
+		if (movie.isPlaying) {
+			movie.Pause();
+		}
+		else {
+			movie.Play();
 		}
 	}
 }
