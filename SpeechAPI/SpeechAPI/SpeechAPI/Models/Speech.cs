@@ -21,7 +21,7 @@ namespace SpeechAPI.Models
         {
             sr = new SpeechRecognitionEngine();
             Choices colors = new Choices();
-            colors.Add(new string[] { "Peter", "James"});
+            colors.Add(new string[] { "Peter", "James", "Switch that"});
 
             GrammarBuilder gb = new GrammarBuilder();
             gb.Append(colors);
@@ -38,8 +38,11 @@ namespace SpeechAPI.Models
 
         void sr_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            commands.Enqueue(e.Result.Text);
-            System.Diagnostics.Debug.WriteLine(e.Result.Text);            
+            if (e.Result.Confidence > 0.8)
+            {
+                commands.Enqueue(e.Result.Text);
+            }
+            System.Diagnostics.Debug.WriteLine(e.Result.Text + " confidence: " +e.Result.Confidence);            
                 
         }
         void sr_SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)

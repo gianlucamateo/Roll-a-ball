@@ -11,6 +11,7 @@ public class InteractScript : MonoBehaviour {
 	public GameObject[] interactables;
 	public int sleepCounter=0;
 	public int counter = 0;
+	public volatile bool switchCommand = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -31,9 +32,10 @@ public class InteractScript : MonoBehaviour {
 		if (Physics.Raycast (transform.position, fwd,out hit)) {
 			hitObject = hit.transform.gameObject;
 			foreach (GameObject s in interactables) {
-				if (hitObject == s && fingerDist < 0.03f) {
+				if (hitObject == s && (fingerDist < 0.03f || switchCommand)) {
 					SwitchScript sScript = s.GetComponent<SwitchScript> ();
 					sScript.Switch ();
+					switchCommand = false;
 					sleepCounter = 50;
 					print ("switched");
 				}
@@ -41,5 +43,8 @@ public class InteractScript : MonoBehaviour {
 				
 		}
 			
+	}
+	public void Switch(){
+		switchCommand = true;
 	}
 }

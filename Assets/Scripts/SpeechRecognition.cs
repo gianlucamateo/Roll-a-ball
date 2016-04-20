@@ -5,6 +5,8 @@ public class SpeechRecognition : MonoBehaviour {
 
 	private int count = 0;
 	public PlayerController james;
+	public TextMesh text;
+	public InteractScript interact;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,12 +18,19 @@ public class SpeechRecognition : MonoBehaviour {
 		// check for errors
 		if (www.error == null)
 		{
-			Debug.Log("WWW Ok!: " + www.text);
+			if (www.text.Length>4) {
+				text.text = www.text;
+			}
+			//Debug.Log("WWW Ok!: " + www.text);
 			if (www.text.Contains ("James")) {
+				print ("James");
 				james.Navigate ();
 			}
+			if (www.text.ToLower ().Contains ("switch that")) {
+				interact.Switch();
+			}
 		} else {
-			Debug.Log("WWW Error: "+ www.error);
+			//Debug.Log("WWW Error: "+ www.error);
 		}    
 	}
 	
@@ -30,7 +39,7 @@ public class SpeechRecognition : MonoBehaviour {
 		if (count++ % 20 == 0) {
 			string url = "http://localhost:2960/api/speech";
 			WWW www = new WWW (url);
-			//StartCoroutine (WaitForRequest (www));
+			StartCoroutine (WaitForRequest (www));
 		}
 	}
 }

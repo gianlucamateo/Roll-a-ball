@@ -45,5 +45,7 @@ Temporary Items
 Library/
 Temp/
 *.mp4
+*.exe
+*.pdb
 Test_Data/
 
