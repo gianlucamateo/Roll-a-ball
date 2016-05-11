@@ -25,4 +25,8 @@ public class BlindController : SwitchScript {
 			up = true;
 		}
 	}
+	public override void Dim (float zeroToOne)
+	{
+		return;
+	}
 }

@@ -30,4 +30,8 @@ public class MovieController : SwitchScript {
 		}
 		r.enabled = movie.isPlaying;
 	}
+	public override void Dim (float zeroToOne)
+	{
+		return;
+	}
 }

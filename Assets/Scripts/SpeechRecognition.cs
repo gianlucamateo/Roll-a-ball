@@ -20,15 +20,25 @@ public class SpeechRecognition : MonoBehaviour {
 		{
 			if (www.text.Length>4) {
 				text.text = www.text;
+				print (www.text);
 			}
 			//Debug.Log("WWW Ok!: " + www.text);
 			if (www.text.Contains ("James")) {
 				print ("James");
 				james.Navigate ();
 			}
-			if (www.text.ToLower ().Contains ("switch that")) {
+			if (www.text.ToLower ().Contains ("switch")) {
 				interact.Switch();
 			}
+			if (www.text.ToLower ().Contains ("dim")) {
+				print ("Dim");
+				interact.Dim();
+			}
+			if (www.text.ToLower ().Contains ("okay")) {
+				print ("okay");
+				interact.EndDim();
+			}
+
 		} else {
 			//Debug.Log("WWW Error: "+ www.error);
 		}    
@@ -36,7 +46,7 @@ public class SpeechRecognition : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (count++ % 20 == 0) {
+		if (count++ % 10 == 0) {
 			string url = "http://localhost:2960/api/speech";
 			WWW www = new WWW (url);
 			StartCoroutine (WaitForRequest (www));

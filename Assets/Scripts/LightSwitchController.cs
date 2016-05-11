@@ -17,4 +17,9 @@ public class LightSwitchController : SwitchScript {
 	override public void Switch(){
 		light.Switch ();
 	}
+
+	public override void Dim (float zeroToOne)
+	{
+		light.Dim (zeroToOne);
+	}
 }

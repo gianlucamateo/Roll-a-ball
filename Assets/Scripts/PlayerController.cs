@@ -1,29 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class PlayerController : MonoBehaviour {
 
 	public float thrust;
 	public GameObject head;
 	public Rigidbody rb;
-	public NavMeshAgent nav;
+	public NavScript nav;
 	public Vector3[] navPoints;
 	public Vector3 controlOverride = Vector3.zero;
 	public bool stopping = false,slowing = false;
-	public bool navigating = false;
+	public bool navigating = false, newPoints = false;
 	public int navIndex = 0;
 	public Vector3 vOffset, movement;
 	public int stopCount = 0;
 	public float distance;
 	public float forward;
 	public float currentSpeed,targetSpeed;
+	public NavMeshPathStatus stat;
+	private int navCount = 0;
 
-	public void Navigate(){
+	public delegate void delegateFunc();
+
+	delegateFunc callOnNavFinished;
+
+	public void Navigate(delegateFunc func = null){
 		this.head.GetComponent<HeadController>().playBeep ();
-		this.navPoints = nav.path.corners;
+		this.refreshRoute ();
 		stopping = true;
+		nav.GetComponent<NavMeshAgent> ().ResetPath ();
+		nav.updateRoute ();
+		stat = nav.GetComponent<NavMeshAgent> ().pathStatus;
 		navigating = true;
+		callOnNavFinished = func;
 		navIndex = 0;
+		navCount = 0;
+	}
+
+	private void refreshRoute()
+	{
+		newPoints = true;
 	}
 
 	void Start ()
@@ -33,6 +48,9 @@ public class PlayerController : MonoBehaviour {
     //before physics
     void FixedUpdate()
     {
+		if (navCount++ < 20) {
+			this.refreshRoute();
+		}
 		if (Input.GetKey (KeyCode.Space)) {
 			UnityEngine.VR.InputTracking.Recenter ();
 		}
@@ -48,7 +66,10 @@ public class PlayerController : MonoBehaviour {
 		if (slowing) {
 			stop (false);
 		}
-
+		if (navigating && newPoints) {
+			this.navPoints = nav.GetComponent<NavMeshAgent>().path.corners;
+			newPoints = false;
+		}
 		if (navigating && navPoints.Length>0 && !(stopping || slowing)) {
 			distance = (navPoints [navIndex] - transform.position).magnitude;
 			targetSpeed = distance;
@@ -64,6 +85,9 @@ public class PlayerController : MonoBehaviour {
 				} else {
 					navigating = false;
 					stopping = true;
+					if (callOnNavFinished != null) {
+						callOnNavFinished ();
+					}
 				}
 			}
 		}		
