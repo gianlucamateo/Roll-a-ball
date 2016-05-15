@@ -119,7 +119,6 @@
      <Compile Include="Assets\LeapMotion\Scripts\VR\TemporalWarpingStatus.cs" />
      <Compile Include="Assets\Scripts\Attach.cs" />
      <Compile Include="Assets\Scripts\BlindController.cs" />
-     <Compile Include="Assets\Scripts\BlindRiseController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraMoveScript.cs" />
      <Compile Include="Assets\Scripts\HeadController.cs" />
