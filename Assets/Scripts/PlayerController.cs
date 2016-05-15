@@ -18,12 +18,18 @@ public class PlayerController : MonoBehaviour {
 	public float currentSpeed,targetSpeed;
 	public NavMeshPathStatus stat;
 	private int navCount = 0;
+	public bool BB8enabled;
 
 	public delegate void delegateFunc();
 
 	delegateFunc callOnNavFinished;
 
 	public void Navigate(delegateFunc func = null){
+		if (!BB8enabled) {
+			if(func != null)
+				func ();
+			return;
+		}
 		this.head.GetComponent<HeadController>().playBeep ();
 		this.refreshRoute ();
 		stopping = true;
