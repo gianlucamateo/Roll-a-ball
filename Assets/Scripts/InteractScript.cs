@@ -13,9 +13,9 @@ public class InteractScript : MonoBehaviour {
 	public TextMesh text;
 	public int sleepCounter=0;
 	public int counter = 0;
-	public volatile bool switchCommand = false;
-	public volatile bool dimCommand = false;
-	public volatile bool dimming = false;
+	public static volatile bool switchCommand = false;
+	public static volatile bool dimCommand = false;
+	public static volatile bool dimming = false;
 	public LightSwitchController dimmingLight;
 	public PlayerController Player;
 	private int timeout = 1;
